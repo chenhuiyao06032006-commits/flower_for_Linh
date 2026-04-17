@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<title>Flower for You</title>
+<style>
+    body {
+        background: linear-gradient(to top, #1a1a2e, #16213e);
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+        font-family: Arial;
+    }
+
+    .flower {
+        position: relative;
+        width: 200px;
+        height: 200px;
+    }
+
+    .petal {
+        position: absolute;
+        width: 100px;
+        height: 100px;
+        background: pink;
+        border-radius: 50%;
+        opacity: 0;
+        transform: scale(0);
+        animation: bloom 2s forwards;
+    }
+
+    .petal:nth-child(1) { top: 0; left: 50px; animation-delay: 0.2s;}
+    .petal:nth-child(2) { top: 50px; left: 0; animation-delay: 0.4s;}
+    .petal:nth-child(3) { top: 100px; left: 50px; animation-delay: 0.6s;}
+    .petal:nth-child(4) { top: 50px; left: 100px; animation-delay: 0.8s;}
+    .petal:nth-child(5) { top: 50px; left: 50px; background: yellow; animation-delay: 1s;}
+
+    @keyframes bloom {
+        to {
+            opacity: 1;
+            transform: scale(1);
+        }
+    }
+
+    .stem {
+        position: absolute;
+        width: 6px;
+        height: 150px;
+        background: green;
+        top: 150px;
+        left: 97px;
+        transform: scaleY(0);
+        transform-origin: top;
+        animation: grow 1s forwards 1s;
+    }
+
+    @keyframes grow {
+        to {
+            transform: scaleY(1);
+        }
+    }
+
+    .text {
+        position: absolute;
+        top: 300px;
+        color: white;
+        font-size: 20px;
+        opacity: 0;
+        animation: showText 2s forwards 2s;
+    }
+
+    @keyframes showText {
+        to {
+            opacity: 1;
+        }
+    }
+</style>
+</head>
+
+<body>
+
+<div class="flower">
+    <div class="petal"></div>
+    <div class="petal"></div>
+    <div class="petal"></div>
+    <div class="petal"></div>
+    <div class="petal"></div>
+    <div class="stem"></div>
+</div>
+
+<div class="text">tặng em linh</div>
+
+</body>
+</html>
